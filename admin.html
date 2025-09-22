@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Civic Report - Admin</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Admin Dashboard</h1>
+    <nav><a href="index.html">Report</a> · <a href="admin.html">Admin Dashboard</a></nav>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>All Reports</h2>
+      <div class="controls">
+        <label>Filter by category: 
+          <select id="filterCategory"><option value="">All</option></select>
+        </label>
+        <button id="clearAll">Clear All Reports</button>
+      </div>
+      <div id="stats" class="stats"></div>
+      <table id="reportsTable">
+        <thead>
+          <tr><th>ID</th><th>Category</th><th>Title</th><th>Location</th><th>Photo</th><th>Status</th><th>Action</th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer>
+    <small>Prototype admin. Data is local to your browser.</small>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

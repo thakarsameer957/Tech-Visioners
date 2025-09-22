@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Civic Report - Citizen</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Civic Issue Reporter</h1>
+    <nav><a href="index.html">Report</a> · <a href="admin.html">Admin Dashboard</a></nav>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>Report an Issue</h2>
+      <form id="reportForm">
+        <label>Category
+          <select id="category" required>
+            <option value="">Select</option>
+            <option>Garbage</option>
+            <option>Pothole</option>
+            <option>Streetlight</option>
+            <option>Water Leakage</option>
+            <option>Other</option>
+          </select>
+        </label>
+
+        <label>Title
+          <input id="title" type="text" placeholder="Short title" required />
+        </label>
+
+        <label>Description
+          <textarea id="description" placeholder="Describe the issue" rows="4"></textarea>
+        </label>
+
+        <label>Photo (optional)
+          <input id="photo" type="file" accept="image/*" />
+        </label>
+        <div id="photoPreview"></div>
+
+        <div class="row">
+          <button type="button" id="getLocationBtn">Capture GPS</button>
+          <div id="locationDisplay">Location: <span id="locText">Not captured</span></div>
+        </div>
+
+        <div class="row">
+          <button type="submit">Submit Report</button>
+          <button type="reset" id="resetBtn">Reset</button>
+        </div>
+      </form>
+      <div id="msg" class="muted"></div>
+    </section>
+
+    <section class="card">
+      <h3>Your Recent Reports (local only)</h3>
+      <div id="ownReports"></div>
+    </section>
+  </main>
+
+  <footer>
+    <small>Prototype app — data stored locally in your browser (localStorage). Use Admin Dashboard to view reports.</small>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
